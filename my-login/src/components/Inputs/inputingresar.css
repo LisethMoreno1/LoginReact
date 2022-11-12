@@ -1,0 +1,62 @@
+form{
+     width: 100%;
+      max-width: 600px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid;
+}
+h1 {
+
+  text-align: center;
+
+}
+
+.container {
+
+  width: 80%;
+  height: 100%;
+  padding: 10%;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.inputInfo {
+  width: 50%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  display: block;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin: .1em;
+  align-items: center;
+
+
+
+
+}
+
+.ButonIngreso {
+  width: 50%;
+  height: 40px;
+  display: block;
+  border-radius: 10px;
+
+}
+
+.Lista{
+    border: 2px solid;
+      width: 50%;
+      height: 20%;
+      display: block;
+      margin: .2em;
+      justify-content: center;
+      align-items: center;
+}

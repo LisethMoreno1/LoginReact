@@ -1,0 +1,22 @@
+.Navigation{
+width: 100%;
+height: 100%;
+margin: 0 auto;
+display: flex;
+background: #F4F4F4;
+border: 1px solid #7C7C7C;
+justify-content: flex-end;
+list-style: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+
+}
+
+.navLi{
+color: rgb(0, 0, 0);
+display: block;
+padding: .5em;
+text-decoration: none;
+float: left;
+}
