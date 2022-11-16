@@ -1,14 +1,12 @@
-import * as React from "react";
-
 import "../Inputs/inputingresar.css";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 export const LoginForm = () => {
   // PARAMETRO PARA COMPARAR LOS DATOS CON EL LOCAL_STORAGE
-
-  const onSubmit = (params: any) => {
+   const onSubmit = (params: any) => {
     const data = JSON.parse(localStorage.getItem("user") || "[]");
     let confir = false;
+    let confirme = false;
     params.preventDefault();
     console.log(data);
     // window.location.reload();
@@ -20,23 +18,26 @@ export const LoginForm = () => {
     const password: string = params.target.password.value;
     console.log(password);
 
+     const Rol: string = params.target.Rol.value;
+     console.log(Rol);
+
     // Constante para compara datos
     for (let i = 0; i < data.length; i++) {
-      if (data[i].name === name && data[i].password === password) {
+      if (data[i].name === name && data[i].password === password && data[i].Rol === "Admin") {
         confir = true;
       }
+      if (confir) {
+        window.location.href = `/inputRegistrar/${name}`;
+
+      }if (data[i].name === name && data[i].password === password && data[i].Rol === "Empleado"){
+        confirme=true;
+      } if (confirme) {
+        window.location.href = `/Empleado/${name}`;
+      } else {
+        // alert("Hola")
+      }
     }
-    if (confir) {
-      window.location.href = "/inputRegistrar";
-    } else {
-      // ALERTA DE USUARIO INCORRECTO (LIBRERIA SWEETALERT)
-      Swal.fire({
-        icon: "error",
-        title: "Usuario no encontrado",
-        text: "El usuario no se encuentra en el sistema",
-      });
-    }
-  };
+};
 
   return (
     <form className="container" onSubmit={onSubmit}>
@@ -47,6 +48,13 @@ export const LoginForm = () => {
         name="name"
         id="name"
         placeholder="Usuario"
+      />
+
+      <input
+        className="inputInfo"
+        name="Rol"
+        id="Rol"
+        placeholder="Rol del Usuario"
       />
 
       <input

@@ -1,64 +1,69 @@
+
+
 .FomDatos {
   width: 100%;
   max-width: 600px;
-  height: 100px;
+  height: 100%;
   margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid;
-  
+  border: 5px solid #e7a01c;
+  background: #ffff;
+
 }
 
 
-h1{
+h1 {
 
   text-align: center;
 
 }
-.Container{
 
-    width: 80%;
-    height: 100%;
-    padding: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.Container {
 
+  width: 80%;
+  height: 100%;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffff;
 
 }
-.inputInfo{
+
+.inputInfo {
   width: 50%;
   height: 30px;
   padding: 5px;
   border-radius: 10px;
   justify-content: center;
-  position:relative;
+  position: relative;
   text-align: center;
   margin: .1em;
-
+  background: #ffff;
 
 }
 
 .SubmitEmpresa {
-    width: 50%;
-    height: 40px;
-    margin: 10px;
-    padding: 10px;
-    margin: .1em;
-    border-radius: 10px;
-  
+  width: 50%;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  margin: .1em;
+  border-radius: 10px;
+  background: #ffff;
 }
 
 
-.ButonRegistro{
+.ButonRegistro {
   width: 50%;
   height: 40px;
-  display:block;
+  display: block;
   border-radius: 10px;
-
+  background: #ffff;
 }
 
 
@@ -71,11 +76,10 @@ h1{
   border: 1px solid #7C7C7C;
   justify-content: flex-end;
   list-style: none;
-
   overflow: hidden;
   display: flex;
   margin: .3em;
-
+  background: #ffff;
 
 }
 
@@ -85,10 +89,13 @@ h1{
   padding: .5em;
   text-decoration: none;
   float: left;
+  background: #ffff;
 }
 
-.empresasStyle{
+.empresasStyle {
   width: 50%;
   margin: .3em;
+  background: #ffff;
+
 
 }

@@ -1,17 +1,22 @@
+
 form{
      width: 100%;
       max-width: 600px;
       height: 100%;
       margin: 0 auto;
+      
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 2px solid;
+      border: 5px solid #e7a01c;
+      background:#ffff;
+    
 }
 h1 {
 
   text-align: center;
+  background: #ffff
 
 }
 
@@ -37,7 +42,7 @@ h1 {
   text-align: center;
   margin: .1em;
   align-items: center;
-
+background: #ffff
 
 
 
@@ -48,7 +53,7 @@ h1 {
   height: 40px;
   display: block;
   border-radius: 10px;
-
+background: #ffff
 }
 
 .Lista{
@@ -59,4 +64,5 @@ h1 {
       margin: .2em;
       justify-content: center;
       align-items: center;
+      background: #ffff
 }

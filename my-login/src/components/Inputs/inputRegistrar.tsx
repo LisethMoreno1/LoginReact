@@ -1,9 +1,16 @@
 import "../Inputs/inputregistrar.css";
-
-import Select, { ActionMeta } from "react-select";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { MdExitToApp } from "react-icons/md";
 
 export const RegistrarFrom = () => {
   // EN ESTA CONDICION TOMA LOS DATOS QUE SE INCRESAAN EN LOS INPUT Y SE GUARDAN EN EL LOCAL STORAGE
+  const [values, setValues] = useState<any>([]);
+  const Select = (params: any) => {
+    setValues([...values, { Permiso: params.target.value }]);
+  };
+  console.log(values);
+
   const handleOnSubmit = (params: any) => {
     const datas = JSON.parse(localStorage.getItem("user") || "[]");
     params.preventDefault();
@@ -14,31 +21,30 @@ export const RegistrarFrom = () => {
         LastName: params.target.LastName.value,
         Rol: params.target.Rol.value,
         password: params.target.password.value,
-        empresas: params.target.empresas.value,
+        Permiso: [...values],
       },
     ];
     console.log(datas);
     localStorage.setItem("user", JSON.stringify(data));
-    /*   window.location.reload(); */
-  };
-  //  EN ESTA CONDICION SE SELECIONAN LOS EMPRESAS EN EL SELECT
-  type Option = typeof options;
-  const options: any = [
-    { value: 1, label: "Empresa 1" },
-    { value: 2, label: "Empresa 2" },
-    { value: 3, label: "Empresa 3" },
-  ];
-  const handleChange = (
-    option: readonly Option[],
-    actionMeta: ActionMeta<Option>
-  ) => {
-    console.log("Option", option);
   };
 
+  const { name } = useParams();
   return (
     <div>
+      <header className="Navigation">
+        <a href="/Empresas" className="navLi">
+          Empresas
+        </a>
+        <br />
+        <a href="/" className="navLi">
+          <MdExitToApp />
+        </a>
+      </header>
+
       <form className="container" onSubmit={handleOnSubmit}>
-        <h1>Crear Usuario</h1>
+        <h1>Hola {name}</h1>
+        <hr />
+        <h4>Crear Usuario</h4>
         <div className="Container">
           <input
             className="inputInfo"
@@ -70,16 +76,11 @@ export const RegistrarFrom = () => {
             placeholder="Contraseña"
             id="password"
           />
-          <Select
-            className="empresasStyle"
-            onChange={handleChange}
-            options={options}
-            placeholder="Elige las Empresa"
-            name="empresas"
-            isMulti
-            isClearable
-            classNamePrefix="select"
-          />
+          <select onChange={Select}>
+            <option>Empresa 1</option>
+            <option>Empresa 2</option>
+            <option>Empresa 3</option>
+          </select>
           <button
             name="Crear"
             type="submit"
