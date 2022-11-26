@@ -1,5 +1,5 @@
 import "../Inputs/inputingresar.css";
-// import Swal from "sweetalert2";
+
 
 export const LoginForm = () => {
   // PARAMETRO PARA COMPARAR LOS DATOS CON EL LOCAL_STORAGE
@@ -11,17 +11,17 @@ export const LoginForm = () => {
     console.log(data);
     // window.location.reload();
 
-    // Constante que guarda el usuario
+    // CONSTANTE PARA GUARDAR LOS USUARIOS
     const name: string = params.target.name.value;
     console.log(name);
-    // Constante que guarda el contraseña
+    // CONSTANTE PARA GUARDAR LA CONTRASEÑA
     const password: string = params.target.password.value;
     console.log(password);
 
      const Rol: string = params.target.Rol.value;
      console.log(Rol);
 
-    // Constante para compara datos
+    // CONSTANT E PARA COMPARAR LOS DATOS
     for (let i = 0; i < data.length; i++) {
       if (data[i].name === name && data[i].password === password && data[i].Rol === "Admin") {
         confir = true;
@@ -34,7 +34,7 @@ export const LoginForm = () => {
       } if (confirme) {
         window.location.href = `/Empleado/${name}`;
       } else {
-        // alert("Hola")
+   
       }
     }
 };
